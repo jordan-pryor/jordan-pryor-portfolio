@@ -1,20 +1,18 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
 
 interface Props {
-  title: string;
-  description: string;
-  image?: string;
+    title: string;
+    description: string;
+    image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const {
-  title,
-  description,
-  image = "../../public/img/branding/imago.png",
+    title,
+    description,
+    image = "../../public/img/branding/imago.png",
 } = Astro.props;
 ---
 
@@ -46,9 +44,24 @@ const {
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<!-- css librerias/ cdn -->
-
-
 <!-- Iconify CDN -->
-<script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"
-></script>
+<script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
+
+<!-- Top Menu Bar -->
+<nav class="top-menu">
+    <div class="logo">
+        <a href="/">
+            <img src="../../public/img/branding/imago.png" alt="Logo" />
+        </a>
+    </div>
+    <ul class="menu-items">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+    <div class="menu-icons">
+        <a href="#"><iconify-icon icon="mdi:account-circle" width="24"></iconify-icon></a>
+        <a href="#"><iconify-icon icon="mdi:shopping" width="24"></iconify-icon></a>
+    </div>
+</nav>
