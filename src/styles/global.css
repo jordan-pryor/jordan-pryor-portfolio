@@ -1,5 +1,5 @@
 :root {
-  /* background gradient */
+  /* Background Gradient */
   --color-background-body: #06080c;
   --color-background-before: #090c12;
   --color-gradient1-start: rgba(26, 113, 244, 0.3);
@@ -17,39 +17,31 @@
   --color-background-gradient6: #0d0e17;
   --color-background-after: #18131c;
 
-
-
-  /* Base */
+  /* Base Colors */
   --color-text: white;
   --color-link: #00ffe1;
   --color-background-header-menu: rgba(0, 0, 0, 0.514);
   --box-shadow-color: rgba(0, 0, 0, 0.2);
   --color-dropdown-background: #f1f1f1;
-  /* Nueva variable para el color de fondo del dropdown */
-
-  /* Nuevas variables para los colores del menú hamburguesa */
   --color-hamburger-background: rgba(0, 0, 0, 0.588);
   --color-hamburger-lines: aqua;
 
-  /* gradientes */
---radial-gradient:radial-gradient(circle,
-rgba(40, 255, 187, 1) 0%,
-rgba(114, 0, 232, 1) 100%);
-
+  /* Gradients */
+  --radial-gradient: radial-gradient(circle,
+  rgba(40, 255, 187, 1) 0%,
+  rgba(114, 0, 232, 1) 100%);
 }
 
-
-
+/* Basic Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-  margin: 0;
   font-size: 62.5%;
-  font-family: "Inter", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-optical-sizing: auto;
 }
 
@@ -68,8 +60,6 @@ li {
   list-style: none;
 }
 
-
-
 .text-gradient {
   background: var(--radial-gradient);
   -webkit-background-clip: text;
@@ -77,28 +67,15 @@ li {
   -webkit-text-fill-color: transparent;
 }
 
-/* global.css */
-
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-}
-
 /* Top Menu Bar */
 .top-menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #6200ea; /* Material Design primary color */
+  background-color: transparent;
   padding: 1rem;
-  color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Material shadow */
+  color: var(--color-text);
+  box-shadow: none;
 }
 
 .logo img {
@@ -116,7 +93,7 @@ body {
 }
 
 .menu-items a {
-  color: white;
+  color: var(--color-link);
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem;
@@ -145,23 +122,24 @@ body {
 }
 
 .menu-icons a {
-  color: white;
+  color: var(--color-link);
   text-decoration: none;
   margin-left: 1rem;
   transition: color 0.3s ease;
 }
 
 .menu-icons a:hover {
-  color: #bb86fc; /* Material Design secondary color */
+  color: #bb86fc;
 }
 
 /* Responsive Menu */
 @media (max-width: 768px) {
   .menu-items {
-    display: none; /* Hide menu items on smaller screens */
+    display: none;
   }
 
   .menu-icons {
     display: flex;
   }
 }
+
