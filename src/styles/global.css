@@ -1,145 +1,68 @@
 :root {
-  /* Background Gradient */
-  --color-background-body: #06080c;
-  --color-background-before: #090c12;
-  --color-gradient1-start: rgba(26, 113, 244, 0.3);
-  --color-gradient1-end: rgba(0, 31, 124, 0);
-  --color-gradient2-start: rgba(26, 91, 244, 0.5);
-  --color-gradient2-middle: rgba(0, 37, 124, 0.4);
-  --color-gradient2-end: rgba(0, 72, 124, 0);
-  --color-gradient3-start: rgba(26, 95, 244, 0.2);
-  --color-gradient3-middle: rgba(0, 29, 124, 0.1);
-  --color-gradient3-end: rgba(0, 41, 124, 0);
-  --color-gradient4-start: rgba(0, 21, 124, 0.075);
-  --color-gradient4-end: rgba(0, 52, 124, 0.05);
-  --color-background-gradient5: #100d17;
-  --color-gradient6-start: rgba(40, 76, 218, 0.5);
-  --color-background-gradient6: #0d0e17;
-  --color-background-after: #18131c;
-
-  /* Base Colors */
-  --color-text: white;
-  --color-link: #00ffe1;
-  --color-background-header-menu: rgba(0, 0, 0, 0.514);
-  --box-shadow-color: rgba(0, 0, 0, 0.2);
-  --color-dropdown-background: #f1f1f1;
-  --color-hamburger-background: rgba(0, 0, 0, 0.588);
-  --color-hamburger-lines: aqua;
-
-  /* Gradients */
-  --radial-gradient: radial-gradient(circle,
-  rgba(40, 255, 187, 1) 0%,
-  rgba(114, 0, 232, 1) 100%);
+  /* Color scheme for Yaru Dark Purple */
+  --color-primary: #7713e2;  /* Dark Purple */
+  --color-secondary: #b583ff; /* Light Purple */
+  --color-text: #e6e6e6;
+  --color-background: #2e2c3a;
+  --color-link-hover: #bb86fc;
 }
 
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-  font-family: 'Roboto', sans-serif;
-  font-optical-sizing: auto;
-}
-
-body {
-  background-color: var(--color-background-body);
-  color: var(--color-text);
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  font-size: 1.6rem;
-}
-
-li {
-  list-style: none;
-}
-
-.text-gradient {
-  background: var(--radial-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Top Menu Bar */
-.top-menu {
+.navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: transparent;
-  padding: 1rem;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-background);
   color: var(--color-text);
-  box-shadow: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Material shadow */
 }
 
-.logo img {
-  width: 40px;
-  height: auto;
+.navbar__logo img {
+  height: 40px;
+  width: auto;
 }
 
-.menu-items {
+.navbar__menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar__link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.navbar__link:hover {
+  color: var(--color-link-hover);
+}
+
+.navbar__icons {
   display: flex;
   gap: 1.5rem;
 }
 
-.menu-items li {
-  list-style: none;
-}
-
-.menu-items a {
-  color: var(--color-link);
+.navbar__icon {
+  color: var(--color-secondary);
   text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem;
-  position: relative;
+  font-size: 1.4rem;
   transition: color 0.3s ease;
 }
 
-/* Ripple Effect on Links */
-.menu-items a::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 0.3s, opacity 0.3s;
+.navbar__icon:hover {
+  color: var(--color-link-hover);
 }
 
-.menu-items a:hover::before {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(0);
-}
-
-.menu-icons a {
-  color: var(--color-link);
-  text-decoration: none;
-  margin-left: 1rem;
-  transition: color 0.3s ease;
-}
-
-.menu-icons a:hover {
-  color: #bb86fc;
-}
-
-/* Responsive Menu */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .menu-items {
+  .navbar__menu {
     display: none;
   }
 
-  .menu-icons {
-    display: flex;
+  .navbar__icons {
+    display: none;
   }
 }
 

@@ -1,0 +1,24 @@
+---
+/* Navbar.astro */
+import "../styles/Navbar.css";
+---
+
+<nav class="navbar">
+    <div class="navbar__logo">
+        <a href="/" aria-label="Home">
+            <img src="/path/to/your-logo.svg" alt="Logo" class="navbar__logo-image" />
+        </a>
+    </div>
+
+    <ul class="navbar__menu">
+        <li><a href="#about" class="navbar__link">About</a></li>
+        <li><a href="#projects" class="navbar__link">Projects</a></li>
+        <li><a href="#contact" class="navbar__link">Contact</a></li>
+    </ul>
+
+    <div class="navbar__icons">
+        <!-- Optional social media or action icons -->
+        <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" class="navbar__icon">GitHub</a>
+        <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="navbar__icon">LinkedIn</a>
+    </div>
+</nav>
